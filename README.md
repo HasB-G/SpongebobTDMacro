@@ -6,6 +6,10 @@
 
 Davy jones is still being updated with the resolution so it wont be included at this moment in time
 
+## Download
+
+[Download the latest version](https://github.com/HasB-G/SpongebobTDMacro/releases/latest)
+
 ---
 
 ## Table of Contents
