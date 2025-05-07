@@ -31,12 +31,7 @@ This is the one that I have used for all of my macros
 
 ## Installation
 
-1. **Clone** this repository:
-
-   ```bash
-   git clone [https://github.com/HasB-G/roblox-macros.git](https://github.com/HasB-G/roblox-macros.git) cd roblox-macros
-   ```
-
+1. **Download** the latest release
 2. **Install** AutoHotkey V1 if you haven’t already.
 3. **Run** `Main.ahk` by double-clicking it.
 
@@ -64,12 +59,21 @@ Resolution=1440p  ; or 1080p
 
 Macros read this file at startup to adjust clicks and image regions accordingly.
 
+Macro moving too quick?
+  
+You could adjust the sleep timings (in ms)
+
 ## Updating Images
 You will need to update the GameIcon.png if the game is updated, To do this:
 * Use Win + Shift + S
 * Take a screenshot of the game icon similiar to the one in the images folder
 * Replace the image under the same name
 
+## Support me
+
+Send me a gift @NunTooHydrological
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/hasb)
 
 ## License
 
