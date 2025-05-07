@@ -183,12 +183,10 @@ LeavePrivateServer:
     WinActivate, Roblox ahk_exe RobloxPlayerBeta.exe
     WinWaitActive, Roblox ahk_exe RobloxPlayerBeta.exe,,2
 	Sleep, 300
-	Send, {Escape Down}
+	Send, {Escape}
 	Sleep, 500
-	Send, {Escape}{l Down}
+	Send, {l}
 	Sleep, 500
-	Send, {l}{Enter Down}
-	Sleep, 300
 	Send, {Enter}
 	Sleep, 3500
 	Gosub, JoinPrivateServer
@@ -480,9 +478,7 @@ ChumMacro:
 	WinActivate, Roblox ahk_exe RobloxPlayerBeta.exe
     WinWaitActive, Roblox ahk_exe RobloxPlayerBeta.exe,,2
 	
-	Send, {2 Down} ;Banks Down
-	Sleep, 300
-	Send, {2}
+	Send, {2} ;Banks Down
 	Sleep, 300
 	Click, % ScaleX(1900) ", " ScaleY(130) ", 0"
 	Gosub, WiggleMouse
@@ -499,9 +495,8 @@ ChumMacro:
 	Click, Left, 5
 	Sleep, 300
 	
-	Send, {2 Down} ;2nd Bank
+	Send, {2} ;2nd Bank
 	Sleep, 300
-	Send, {2}
 	Sleep, 300
 	Click, % ScaleX(2022) ", " ScaleY(476) ", 0"
 	Gosub, WiggleMouse
@@ -509,9 +504,7 @@ ChumMacro:
 	Click, Left, 1
 	
 	Sleep, 4500
-	Send, {1 Down} ;Slasher Down
-	Sleep, 300
-	Send, {1}
+	Send, {1} ;Slasher Down
 	Sleep, 300
 	Click, % ScaleX(1350) ", " ScaleY(729) ", 0"
 	Gosub, WiggleMouse
@@ -519,9 +512,7 @@ ChumMacro:
 	Click, Left, 1
 	
 	Sleep, 3500
-	Send, {5 Down} ;Bear
-	Sleep, 300
-	Send, {5}
+	Send, {5} ;Bear
 	Sleep, 300
 	Click, % ScaleX(999) ", " ScaleY(547) ", 0"
 	Gosub, WiggleMouse
@@ -529,9 +520,7 @@ ChumMacro:
 	Click, Left, 1
 	
 	Sleep, 2000
-	Send, {4 Down} ;Rhino
-	Sleep, 300
-	Send, {4}
+	Send, {4} ;Rhino
 	Sleep, 300
 	Click, % ScaleX(1584) ", " ScaleY(408) ", 0"
 	Gosub, WiggleMouse
@@ -539,9 +528,7 @@ ChumMacro:
 	Click, Left, 1
 	
 	Sleep, 1000
-	Send, {4 Down} ;Rhino
-	Sleep, 300
-	Send, {4}
+	Send, {4} ;Rhino
 	Sleep, 300
 	Click, % ScaleX(631) ", " ScaleY(450) ", 0"
 	Gosub, WiggleMouse
