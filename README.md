@@ -32,8 +32,9 @@ This is the one that I have used for all of my macros
 ## Installation
 
 1. **Download** the latest release
-2. **Install** AutoHotkey V1 if you haven’t already.
-3. **Run** `Main.ahk` by double-clicking it.
+2. **Extract** the zip file
+3. **Install** AutoHotkey V1 if you haven’t already.
+4. **Run** `Main.ahk` by double-clicking it.
 
 ---
 
