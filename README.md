@@ -20,8 +20,12 @@ Davy jones is still being updated with the resolution so it wont be included at 
 
 * Windows OS
 * [AutoHotkey v1.1+](https://www.autohotkey.com/) installed
+* use a loadout like the one below
 
-* 
+![Loadout](assets/Loadout.png)
+ 
+This is the one that I have used for all of my macros
+* Hash could probably be swapped out for Cyborg
 
 ---
 
@@ -61,10 +65,10 @@ Resolution=1440p  ; or 1080p
 Macros read this file at startup to adjust clicks and image regions accordingly.
 
 ## Updating Images
-You will need to update the GameIcon.png if the game is updated
-To do this use Win + Shift + S
-Take a screenshot of the game icon similiar to the one in the images folder
-Replace the image under the same name
+You will need to update the GameIcon.png if the game is updated, To do this:
+* Use Win + Shift + S
+* Take a screenshot of the game icon similiar to the one in the images folder
+* Replace the image under the same name
 
 
 ## License
