@@ -46,6 +46,8 @@ This is the one that I have used for all of my macros
 3. **Settings** → change your resolution between **1440p** / **1080p**.  
 4. **F1** → reopen the loader at any time.
 
+Please make sure you have created a private server!
+
 ---
 
 ## Configuration
