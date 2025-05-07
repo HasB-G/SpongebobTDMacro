@@ -53,6 +53,16 @@ This is the one that I have used for all of my macros
 
 Please make sure you have created a private server!
 
+## Menus and what they do
+
+**Setup Menu** used soon as you load into the level
+
+**Choose Level** used when set ups done and you want to replay the macro
+(Use when start wave is on screen)
+
+**Go To Challenge** used when first joined the game
+
+**F1 Can be used at anytime to reload the macro and open the menu**
 ---
 
 ## Configuration
