@@ -524,8 +524,9 @@ Patty:
 	MouseMove, % ScaleX(224), % ScaleY(1117), 0
 	Sleep, 300
 	Gosub, WiggleMouse
+	Sleep, 300
 	Click, Left, 1
-	Sleep, 500
+	Sleep, 1000
 	
 	MouseMove, % ScaleX(1302), % ScaleY(1023), 0 ; Start level 
 	Sleep, 300
@@ -556,7 +557,7 @@ Patty:
 	
 	Send, {5} ;Sea Bear Down
 	Sleep, 300
-	MouseMove, % ScaleX(899), % ScaleY(471), 0
+	MouseMove, % ScaleX(1435), % ScaleY(310), 0
     Sleep, 300
     Gosub, WiggleMouse
     Click, Left, 1
@@ -574,7 +575,7 @@ Patty:
 	
 	Send, {4} ;2nd Rhino Down
 	Sleep, 300
-	MouseMove, % ScaleX(660), % ScaleY(220), 0
+	MouseMove, % ScaleX(669), % ScaleY(176), 0
     Sleep, 300
     Gosub, WiggleMouse
     Click, Left, 1
