@@ -53,6 +53,8 @@ This is the one that I have used for all of my macros
 
 Please make sure you have created a private server!
 
+Camera mode should also be on toggle in roblox settings!
+
 ## Menus and what they do
 
 **Setup Menu** used soon as you load into the level
