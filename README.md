@@ -25,6 +25,9 @@ Davy jones is still being updated with the resolution so it wont be included at 
 * Windows OS
 * [AutoHotkey v1.1+](https://www.autohotkey.com/) installed
 * use a loadout like the one below
+* Created a private server
+* Camera mode should also be on toggle in roblox settings
+
 
 ![Loadout](assets/Loadout.png)
  
@@ -50,10 +53,6 @@ This is the one that I have used for all of my macros
    - **Davy Jones Macro** → launches `DavyJones.ahk`  
 3. **Settings** → change your resolution between **1440p** / **1080p**.  
 4. **F1** → reopen the loader at any time.
-
-Please make sure you have created a private server!
-
-Camera mode should also be on toggle in roblox settings!
 
 ## Menus and what they do
 
