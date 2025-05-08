@@ -30,8 +30,6 @@ global CoordMap ;for JoinPrivate Server
 
 ;Join Private coordmaps
 CoordMap := {} 
-CoordMap["JoinBtn"]        := { "1080p": [560, 238],  "1440p": [561, 241] }
-CoordMap["JoinFriends"]    := { "1080p": [428, 410],  "1440p": [397, 415] }
 CoordMap["Refresh"] 	   := { "1080p": [1394, 125], "1440p": [1714, 130] }
 CoordMap["PrivateSrvSlot"] := { "1080p": [590, 490],  "1440p": [910, 490] }
 
@@ -194,175 +192,112 @@ Return
 
 
 JoinPrivateServer:
-    Gui, ChumGUI:Destroy
+    Gui, DavyGUI:Destroy
 	
-	; --- Quick Check for image 2 or 3 scroll fix ---
-	bIconFound := false
-	
-	; Check for GameIcon2.png
-    Loop 5 {
-        CoordMode, Pixel, Window
-        ImageSearch, FoundX1, FoundY1
-            , % ScaleX(0), % ScaleY(0)
-            , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-            , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon2.png
-        if (ErrorLevel = 0) {
-            bIconFound := true
-            break
-        }
-        Sleep, 500
-    }
-	
-	; If GameIcon2 not found, check for GameIcon3.png
-    if (!bIconFound) {
-        Loop 5 {
-            CoordMode, Pixel, Window
-            ImageSearch, FoundX1, FoundY1
-                , % ScaleX(0), % ScaleY(0)
-                , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-                , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon3.png
-            if (ErrorLevel = 0) {
-                bIconFound := true
-                break
-            }
-            Sleep, 500
-        }
-    }
-	
-    if (!bIconFound) {
-        Gosub, DetectGame
-    }
-	
-    Sleep, 1450
     WinActivate, Roblox ahk_exe RobloxPlayerBeta.exe
     WinWaitActive, Roblox ahk_exe RobloxPlayerBeta.exe,,2
+    Sleep, 1450
 	
-	ClickStep("JoinBtn")
-	Sleep, 300
-	ClickStep("JoinFriends")
+    MouseMove, % ScaleX(38), % ScaleY(60), 0 ;Start level
+    Sleep, 300
+    Gosub, WiggleMouse
+    Click, Left, 1
+    Sleep, 1000
+    Send, {Esc}
+    Sleep, 500
+    Send, /
+    Sleep, 500
+	
+    SetKeyDelay, 50
+    Send, Spongebob tower defense
+    Sleep, 500
+    Send, {Enter}
+    Sleep, 3000
+    MouseMove, % ScaleX(346), % ScaleY(422), 0 ;Start level
+    Sleep, 300
+    Gosub, WiggleMouse
+    Click, Left, 1
+	
+    ;try 10 times
+    iconFound := false
+    Loop, 10
+    {
+        CoordMode, Pixel, Window
+        ImageSearch, FoundX1, FoundY1
+        , 0, 0
+        , A_ScreenWidth, A_ScreenHeight
+        , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon.png
+        Sleep, 300
+        
+        if (ErrorLevel = 0) {
+            ; Image found, center on it and click
+            Gosub, CenterImgSrchCoords1
+            MouseMove, %FoundX1%, %FoundY1%, 5
+            Gosub, WiggleMouse
+            Sleep, 500
+            Click, Left, 1
+            Sleep, 400
+            iconFound := true
+            break
+        }
+    }
+    
+    ;Not found? restart roblox
+    if (!iconFound) {
+        Process, Close, RobloxPlayerBeta.exe
+        Sleep, 3000
+        shell := ComObjCreate("Shell.Application")
+        apps  := shell.NameSpace("shell:AppsFolder")
+        for item in apps.Items {
+            if (item.Name = "Roblox Player") {
+                item.InvokeVerb()
+                break
+            }
+        }
+        WinWait, ahk_exe RobloxPlayerBeta.exe, , 10
+        Goto, JoinPrivateServer
+    }
+	
+	Loop, 10
+    {
+        CoordMode, Pixel, Window
+        ImageSearch, FoundX1, FoundY1
+        , 0, 0
+        , A_ScreenWidth, A_ScreenHeight
+        , *10 %A_ScriptDir%\Images\%Resolution%\JoinFriends.png
+        Sleep, 300
+        
+        if (ErrorLevel = 0) {
+            ; Image found, center on it and click
+            Gosub, CenterImgSrchCoords1
+            MouseMove, %FoundX1%, %FoundY1%, 5
+            Gosub, WiggleMouse
+            Sleep, 500
+            Click, Left, 1
+            Sleep, 400
+            break
+        }
+    }
+	
 	Sleep, 1000
 	ClickStep("Refresh")
 	Sleep, 1000
     ClickStep("PrivateSrvSlot")
 	Sleep, 300
 	
+    ;Look for ingame play button
     Loop
-	{
-		CoordMode, Pixel, Window
-		ImageSearch, PlayX, PlayY
-		, % ScaleX(196), % ScaleY(493) ;Top Left
-		, % ScaleX(515), % ScaleY(799) ;Bottom Right
-		, *10 %A_ScriptDir%\Images\%Resolution%\PlayButton.png
-		Sleep, 300
-	}
-	Until ErrorLevel = 0
-    Goto, GoToLevel
-Return
-
-DetectGame:
-
-    WinActivate, Roblox ahk_exe RobloxPlayerBeta.exe
-    WinWaitActive, Roblox ahk_exe RobloxPlayerBeta.exe,,2
-	Sleep, 300
-	GoSub WiggleMouse
-	Sleep, 300
-	
-    Loop 10 {
+    {
         CoordMode, Pixel, Window
-        ImageSearch, FoundX1, FoundY1
-            , % ScaleX(0),    % ScaleY(0)
-            , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-            , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon.png
+        ImageSearch, PlayX, PlayY
+        , % ScaleX(196), % ScaleY(493) ;Top Left
+        , % ScaleX(515), % ScaleY(799) ;Bottom Right
+        , *10 %A_ScriptDir%\Images\%Resolution%\PlayButton.png
+        Sleep, 300
         if (ErrorLevel = 0)
             break
-        Send, {WheelDown 2}
-        Sleep, 500
     }
-
-	
-    if (ErrorLevel = 0) {
-        Gosub, CenterImgSrchCoords1  ;centers on FoundX1/FoundY1
-        
-        ;Move to center coordinates
-        MouseMove, %FoundX1%, %FoundY1%, 5
-        ;Add wiggle movement
-        Gosub, WiggleMouse
-        Sleep, 500
-        Click, Left, 1
-        Sleep, 400
-        
-        ;now search for Image2
-        Loop 10 {
-            CoordMode, Pixel, Window
-            ImageSearch, FoundX2, FoundY2
-                , % ScaleX(0),    % ScaleY(0)
-                , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-                , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon2.png
-            if (ErrorLevel = 0)
-                break
-            Sleep, 200
-        }
-        
-        if (ErrorLevel = 0) {
-            Return
-        }
-        ;go to Image3
-        Loop 10 {
-            CoordMode, Pixel, Window
-            ImageSearch, FoundX3, FoundY3
-                , % ScaleX(0),    % ScaleY(0)
-                , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-                , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon3.png
-            if (ErrorLevel = 0)
-                break
-            Sleep, 200
-        }
-        if (ErrorLevel = 0)
-            Return
-
-    } else {
-        ;didnt find Image1 try Image2
-        Loop 5 {
-            CoordMode, Pixel, Window
-            ImageSearch, FoundX2, FoundY2
-                , % ScaleX(0),    % ScaleY(0)
-                , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-                , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon2.png
-            if (ErrorLevel = 0)
-                break
-            Sleep, 200
-        }
-        if (ErrorLevel = 0)
-            Return
-
-        ;try Image3
-        Loop 5 {
-            CoordMode, Pixel, Window
-            ImageSearch, FoundX3, FoundY3
-                , % ScaleX(0),    % ScaleY(0)
-                , % ScaleX(A_ScreenWidth), % ScaleY(A_ScreenHeight)
-                , *10 %A_ScriptDir%\Images\%Resolution%\GameIcon3.png
-            if (ErrorLevel = 0)
-                break
-            Sleep, 200
-        }
-        if (ErrorLevel = 0)
-            Return
-    }
-
-    ;none found then restart Roblox
-    Process, Close, RobloxPlayerBeta.exe
-    Sleep, 3000
-    shell := ComObjCreate("Shell.Application")
-    apps  := shell.NameSpace("shell:AppsFolder")
-    for item in apps.Items {
-        if (item.Name = "Roblox Player") {
-            item.InvokeVerb()
-            break
-        }
-    }
-    WinWait, ahk_exe RobloxPlayerBeta.exe, , 10
-    Goto, JoinPrivateServer
+    Goto, GoToLevel
 Return
 
 WiggleMouse:
