@@ -27,6 +27,7 @@ Davy jones is still being updated with the resolution so it wont be included at 
 * use a loadout like the one below
 * Created a private server
 * Camera mode should also be on toggle in roblox settings
+* Camera Sens should be: 0.52
 
 
 ![Loadout](assets/Loadout.png)
