@@ -215,20 +215,17 @@ CreateInfoHUD() {
     infoHUD.Add("Text", "x155 y10 cFFFFFF", "F2: Exit")
     
     ;Stats
-    raidStats := infoHUD.Add("Text", "vRaidStats x300 y10 cFFA500", "Raids: ")
-    raidStatsWins := infoHUD.Add("Text", "vRaidStatsWins x+0 y10 c00FF00", raidWins)
-    raidStatsSep := infoHUD.Add("Text", "vRaidStatsSep x+0 y10 cFFFFFF", " / ")
-    raidStatsLoss := infoHUD.Add("Text", "vRaidStatsLoss x+0 y10 cFF0000", raidLosses)
+    raidStats := infoHUD.Add("Text", "vRaidStats x230 y10 cFFA500", "Raids: ")
+    raidStatsWins := infoHUD.Add("Text", "vRaidStatsWins x+0 y10 w60 c00FF00", raidWins)
+    raidStatsLoss := infoHUD.Add("Text", "vRaidStatsLoss x+0 y10 w30 cFF0000", raidLosses)
     
-    davyStats := infoHUD.Add("Text", "vDavyStats x405 y10 cFF1493", "Davy Jones: ")
-    davyStatsWins := infoHUD.Add("Text", "vDavyStatsWins x+0 y10 c00FF00", davyWins)
-    davyStatsSep := infoHUD.Add("Text", "vDavyStatsSep x+0 y10 cFFFFFF", " / ")
-    davyStatsLoss := infoHUD.Add("Text", "vDavyStatsLoss x+0 y10 cFF0000", davyLosses)
+    davyStats := infoHUD.Add("Text", "vDavyStats x400 y10 cFF1493", "Davy Jones: ")
+    davyStatsWins := infoHUD.Add("Text", "vDavyStatsWins x+0 y10 w60 c00FF00", davyWins)
+    davyStatsLoss := infoHUD.Add("Text", "vDavyStatsLoss x+0 y10 w30 cFF0000", davyLosses)
     
-    chumStats := infoHUD.Add("Text", "vChumStats x545 y10 c800080", "Chum Bucket: ")
-    chumStatsWins := infoHUD.Add("Text", "vChumStatsWins x+0 y10 c00FF00", chumWins)
-    chumStatsSep := infoHUD.Add("Text", "vChumStatsSep x+0 y10 cFFFFFF", " / ")
-    chumStatsLoss := infoHUD.Add("Text", "vChumStatsLoss x+0 y10 cFF0000", chumLosses)
+    chumStats := infoHUD.Add("Text", "vChumStats x605 y10 c800080", "Chum Bucket: ")
+    chumStatsWins := infoHUD.Add("Text", "vChumStatsWins x+0 y10 w60 c00FF00", chumWins)
+    chumStatsLoss := infoHUD.Add("Text", "vChumStatsLoss x+0 y10 w30 cFF0000", chumLosses)
     
     statusText := infoHUD.Add("Text", "x" (robloxWidth/2 - 150) " y10 w300 Center c00FFFF", "Status: " currentStatus)
     timerText := infoHUD.Add("Text", "x" (robloxWidth - 600) " y10 w300 Right c00FF00 Hidden", "Time until collecting prizes: ⏱ 00:00:00")
