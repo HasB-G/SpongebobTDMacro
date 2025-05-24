@@ -13,8 +13,10 @@
 1. [Requirements](#requirements)
 2. [Installation](#installation)
 3. [Usage](#usage)
-4. [Configuration](#configuration)
-5. [License](#license)
+4. [Menu Options](#menu-options)
+5. [Notes](#notes)
+6. [Support Me](#support-me)  
+7. [License](#license)
 
 ## Requirements
 
@@ -53,7 +55,9 @@ This is the one that I have used for all of my macros
 4. **F1** → reopen the loader at any time stopping any ongoing macro operations
 5. **F2** → Exit the script
 
-## Menus and what they do
+---
+
+## Menu Options
 
 **Join Server/Launch Game** Used when out of the game: launches roblox if not already open and joins your private server running the selected mode from then onwards
 
@@ -65,12 +69,6 @@ This is the one that I have used for all of my macros
 
 ---
 
-## Configuration
-
-Macro moving too quick?
-
-You could adjust the sleep timings (in ms)
-
 ## Notes
 
 Everything is done automatically after makign a selection
@@ -79,7 +77,7 @@ In case going to level fails theres checks in place to try again so you could ru
 
 Any bugs let me know :)
 
-## Support me
+## Support Me
 
 Send me a gift @NunTooHydrological
 
