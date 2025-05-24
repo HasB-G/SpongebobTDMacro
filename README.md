@@ -1,11 +1,7 @@
-# Spongebob Tower Defense Macro
+# Spongebob Tower Defense Macro v2.0
 
-* **Macro Loader** (`Main.ahk`)
-* **Chum Nightmare Macro** (`ChumNightmare.ahk`)
-* **Davy Jones Macro** (`DavyJones.ahk`)
-
-Davy jones is still being updated with the resolution so it wont be included at this moment in time
-
+**Please read through first**
+  
 ## Download
 
 [Download the latest version](https://github.com/HasB-G/SpongebobTDMacro/releases/latest)
@@ -23,18 +19,19 @@ Davy jones is still being updated with the resolution so it wont be included at 
 ## Requirements
 
 * Windows OS
-* [AutoHotkey v1.1+](https://www.autohotkey.com/) installed
-* use a loadout like the one below
+* [AutoHotkey v2.0](https://www.autohotkey.com/) installed
 * Created a private server
 * Camera mode should also be on toggle in roblox settings
 * Camera Sens should be: 0.52
 * Game should be maximised (not fullscreen)
-
+* Use a loadout like the one below
 
 ![Loadout](assets/Loadout.png)
  
 This is the one that I have used for all of my macros
-* Hash could probably be swapped out for Cyborg
+* Hash could possibly be swapped out for Cyborg
+* Rhino could possibly be swapped for a sw 5* Richhard
+* Davy Jones and Chum only uses Units 1,2,4,5 the rest can be filler
 
 ---
 
@@ -42,52 +39,44 @@ This is the one that I have used for all of my macros
 
 1. **Download** the latest release
 2. **Extract** the zip file
-3. **Install** AutoHotkey V1 if you haven’t already.
+3. **Install** AutoHotkey V2 if you haven’t already.
 4. **Run** `Main.ahk` by double-clicking it.
 
 ---
 
 ## Usage
 
-1. **Start** `Main.ahk`. The loader GUI appears.  
-2. **Choose** one of the macros:
-   - **Chum Macro** → launches `ChumNightmare.ahk`  
-   - **Davy Jones Macro** → launches `DavyJones.ahk`  
-3. **Settings** → change your resolution between **1440p** / **1080p**.  
-4. **F1** → reopen the loader at any time.
+1. **Start** `Main.ahk`. The loader GUI appears
+2. **Choose** a gamemode
+3. **Choose** an option
+4. **F1** → reopen the loader at any time stopping any ongoing macro operations
+5. **F2** → Exit the script
 
 ## Menus and what they do
 
-**Setup Menu** used soon as you load into the level
+**Join Server/Launch Game** Used when out of the game: launches roblox if not already open and joins your private server running the selected mode from then onwards
 
-**Choose Level** used when set ups done and you want to replay the macro
-(Use when start wave is on screen)
+**Go To Level** Goes to the chosen gamemdoe
 
-**Go To Challenge** used when first joined the game
+**Setup a Level** Can be used when loaded into a level for the first time
 
-**F1 Can be used at anytime to reload the macro and open the menu**
+**Start a Level** Can be used after setups done e.g. coming back and resuming when start wave is on screen
+
 ---
 
 ## Configuration
 
-The first time you change resolution, `settings.ini` is created:
-
-```ini
-[Display]
-Resolution=1440p  ; or 1080p
-```
-
-Macros read this file at startup to adjust clicks and image regions accordingly.
-
 Macro moving too quick?
-  
+
 You could adjust the sleep timings (in ms)
 
-## Updating Images
-You will need to update the GameIcon.png if the game is updated, To do this:
-* Use Win + Shift + S
-* Take a screenshot of the game icon similiar to the one in the images folder
-* Replace the image under the same name
+## Notes
+
+Everything is done automatically after makign a selection
+
+In case going to level fails theres checks in place to try again so you could run it 24/7
+
+Any bugs please let me know
 
 ## Support me
 
