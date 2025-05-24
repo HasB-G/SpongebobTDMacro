@@ -32,6 +32,7 @@ This is the one that I have used for all of my macros
 * Hash could possibly be swapped out for Cyborg
 * Rhino could possibly be swapped for a sw 5* Richhard
 * Davy Jones and Chum only uses Units 1,2,4,5 the rest can be filler
+* Most secrets could probably be swapped for others
 
 ---
 
@@ -76,7 +77,7 @@ Everything is done automatically after makign a selection
 
 In case going to level fails theres checks in place to try again so you could run it 24/7
 
-Any bugs please let me know
+Any bugs let me know :)
 
 ## Support me
 
